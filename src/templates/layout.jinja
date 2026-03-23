@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Oilskin Repo{% endblock %}</title>
+    {% include 'includes/_head_utils.jinja' %}
+</head>
+
+<body>
+
+    {% include 'includes/_navbar.jinja' %}
+
+    {% block content %}
+    {% endblock %}
+
+    {% include 'includes/_footer.jinja' %}
+
+</body>
+
+</html>

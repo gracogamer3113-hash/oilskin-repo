@@ -22,8 +22,7 @@
   },
   "scripts": {
     "build": "tailwindcss -i ./src/static/src_css/input.css -o ./src/static/css/style.css",
-    "watch": "tailwindcss -i ./src/static/src_css/input.css -o ./src/static/css/style.css --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch": "tailwindcss -i ./src/static/src_css/input.css -o ./src/static/css/style.css --watch"
   },
   "repository": {
     "type": "git",

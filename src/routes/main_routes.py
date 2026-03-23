@@ -9,6 +9,12 @@ def index():
         return render_template('index.jinja')
     except Exception as Error:
         return render_template('error_page', mensaje=f"Pagina No Encontrada, {Error}")
+@main.route('/sobre_nosotros')
+def about():
+    try:
+        return render_template('sobre_nosotros.jinja')
+    except Exception as Error:
+        return render_template('error_page', mensaje=f"Pagina No Encontrada, {Error}")
 
 @main.route('/producto/<int:id>')
 def get_product(id):
