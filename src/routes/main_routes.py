@@ -14,5 +14,5 @@ def index():
 def get_product(id):
     producto = ModeloProducto.get_by_id(id)
     if producto:
-        return render_template('detalle.html', producto=producto)
+        return render_template('detalle.jinja', producto=producto)
     return render_template('error_page', mensaje=f"Producto no Encontrado")

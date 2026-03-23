@@ -9,5 +9,5 @@ class ModeloProducto:
     @classmethod
     def get_by_id(cls, id_producto):
         cur=mysql.connection.cursor()
-        cur.execute("SELECT * FROM productos WHERE id = %s", (id_producto))
+        cur.execute("SELECT * FROM producto WHERE id_producto = %s", (id_producto,))
         return cur.fetchone()
