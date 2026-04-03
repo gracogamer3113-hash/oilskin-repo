@@ -1,13 +1,19 @@
+# Todo lo que esta aqui merece un refactor urgente
+# Tambien modular todo esto de forma correcta
+
 from flask import Blueprint, render_template
 from src.models.ModeloProductos import ModeloProducto
 from src.models.ModeloCategoria import ModeloCategoria
 
+# Blueprint para manejar las rutas
 main = Blueprint('product_blueprint', __name__)
 
+# Ruta principal
 @main.route('/')
 def index():
     try:
         return render_template('index.jinja')
+    # ↓ Esta mierda es lo peor que pude haber hecho ↓
     except Exception as Error:
         return render_template('error_page.jinja', mensaje=f"Pagina No Encontrada, {Error}")
 
@@ -18,6 +24,8 @@ def about():
     except Exception as Error:
         return render_template('error_page.jinja', mensaje=f"Pagina No Encontrada, {Error}")
 
+# Ruta dinamica con el id de un producto, requiere un cambio al campo de nombre_producto
+
 @main.route('/producto/<int:id>')
 def get_product(id):
     producto = ModeloProducto.get_by_id(id)
@@ -25,6 +33,7 @@ def get_product(id):
         return render_template('detalle.jinja', producto=producto)
     return render_template('error_page.jinja', mensaje=f"Producto no Encontrado")
 
+# Lo mismo que arriba
 @main.route('/categoria/<int:category_id>')
 def show_category(category_id):
     try:

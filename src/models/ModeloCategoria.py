@@ -1,7 +1,9 @@
 from src.database.db_mysql import mysql
 
 class ModeloCategoria:
+    # Metodos especificos
     @classmethod
+    # proximo refactor usando id_categoria
     def get_description_by_name(cls, category_name):
         """
         Busca la descripcion de una categoria especifica por su nombre
@@ -18,6 +20,7 @@ class ModeloCategoria:
             return None
 
     @classmethod
+    # proximo a ser borrado alv
     def get_description_by_id(cls, category_id):
         """
         Busca la descripcion de una categoria especifica por su ID
@@ -50,6 +53,9 @@ class ModeloCategoria:
             return None
     @classmethod
     def get_all_categories(cls):
+        """
+        Obtiene todas las categorias
+        """
         try:
             cur = mysql.connection.cursor()
             sql = "SELECT nombre FROM categoria"
