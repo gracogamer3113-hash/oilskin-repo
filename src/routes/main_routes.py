@@ -23,6 +23,18 @@ def about():
         return render_template('sobre_nosotros.jinja',categorias=get_nav_data())
     except Exception as Error:
         return render_template('error_page.jinja', mensaje=f"Pagina No Encontrada, {Error}")
+@main.route('/login')
+def login():
+    try:
+        return render_template('login.jinja',categorias=get_nav_data())
+    except Exception as Error:
+        return render_template('error_page.jinja', mensaje=f"Pagina No Encontrada, {Error}")
+@main.route('/register')
+def register():
+    try:
+        return render_template('register.jinja',categorias=get_nav_data())
+    except Exception as Error:
+        return render_template('error_page.jinja', mensaje=f"Pagina No Encontrada, {Error}")
 
 # Ruta dinamica con el id de un producto, requiere un cambio al campo de nombre_producto
 
