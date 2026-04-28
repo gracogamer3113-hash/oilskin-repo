@@ -11,7 +11,7 @@ main = Blueprint('main_blueprint', __name__)
 
 @main.app_errorhandler(404)
 def handle_not_found(error):
-    return render_template('error_page.jinja')
+    return render_template('error_page.jinja',mensaje=error)
 
 # Ruta principal
 @main.route('/')
@@ -28,7 +28,7 @@ def login():
 def register():
     return render_template('register.jinja',categorias=get_nav_data())
 
-# Ruta dinamica con el id de un producto, requiere un cambio al campo de nombre_producto
+# Ruta dinámica con el id de un producto, requiere un cambio al campo de nombre_producto
 
 @main.route('/producto/<int:id>')
 def get_product(id):
